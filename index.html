@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ruta Backend Java 2026</title>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="#inicio" class="brand">
+      <span class="brand-icon"><i class="fa-solid fa-server"></i></span>
+      <span>Backend Java 2026</span>
+    </a>
+    <nav class="main-nav" aria-label="Navegación principal">
+      <a href="#temario">Temario</a>
+      <a href="#plan">Plan</a>
+      <a href="#avances">Avances</a>
+      <a href="#consideraciones">A tener en cuenta</a>
+    </nav>
+    <button id="toggleChecks" class="toggle-checks" type="button">
+      <i class="fa-regular fa-square-check"></i>
+      Mostrar casillas
+    </button>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero section">
+      <div class="hero-content">
+        <p class="eyebrow"><i class="fa-solid fa-route"></i> Guía de Especialización y Plan de Carrera 2026</p>
+        <h1>Ruta de aprendizaje para convertirte en Developer Backend Java</h1>
+        <p class="hero-copy">Un path desde cero hasta avanzado, alineado con el mercado actual: Java moderno, Spring Boot, PostgreSQL, APIs REST, arquitectura, seguridad, DevOps, IA aplicada y bases algorítmicas sólidas.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#temario">Ver temario</a>
+          <a class="btn secondary" href="#plan">Ver ruta de 8 meses</a>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <span class="card-badge">Intensidad sugerida</span>
+        <strong>6 horas al día</strong>
+        <p>5 días por semana durante 7-8 meses, con proyecto integrador progresivo.</p>
+        <div class="mini-stats">
+          <span><b>100</b> temas</span>
+          <span><b>8</b> módulos</span>
+          <span><b>32</b> semanas</span>
+        </div>
+      </aside>
+    </section>
+
+    <section class="market section">
+      <div class="section-heading">
+        <p class="eyebrow">Análisis de mercado</p>
+        <h2>Qué pide el backend moderno</h2>
+      </div>
+      <div class="cards-grid">
+        <article class="info-card"><i class="fa-solid fa-cloud"></i><h3>Cloud-native y microservicios</h3><p>El backend actual demanda servicios escalables, resilientes, observables y preparados para despliegues automatizados.</p></article>
+        <article class="info-card"><i class="fa-brands fa-java"></i><h3>Java sigue fuerte</h3><p>La JVM, Java LTS, Spring Boot y el ecosistema empresarial siguen siendo relevantes en banca, SaaS, fintech y e-commerce.</p></article>
+        <article class="info-card"><i class="fa-solid fa-shield-halved"></i><h3>Seguridad y criterio</h3><p>OWASP, autenticación, autorización, gestión de secretos y diseño seguro ya no son opcionales para un perfil competitivo.</p></article>
+        <article class="info-card"><i class="fa-solid fa-robot"></i><h3>IA como acelerador</h3><p>El valor profesional está en saber supervisar, validar y estructurar soluciones generadas con asistentes de IA.</p></article>
+      </div>
+    </section>
+
+    <section id="temario" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Temario completo</p>
+        <h2>100 temas ordenados de cero a avanzado</h2>
+        <p>Cada punto tiene una casilla opcional. Por defecto están ocultas para mantener una lectura limpia.</p>
+      </div>
+      <div id="curriculum" class="curriculum"></div>
+    </section>
+
+    <section id="plan" class="section plan-section">
+      <div class="section-heading light">
+        <p class="eyebrow">Plan de 8 meses</p>
+        <h2>Ruta tipo carretera: aprende construyendo JanSahayak</h2>
+        <p>Un proyecto backend incremental: de consola Java a API segura con PostgreSQL, Docker, CI/CD e integración IA.</p>
+      </div>
+      <div class="jansahayak-note">
+        <i class="fa-solid fa-circle-info"></i>
+        <div>
+          <h3>¿Qué es JanSahayak?</h3>
+          <p>JanSahayak (del hindi <em>"asistente del pueblo"</em>) es el <strong>proyecto integrador</strong> que construyes durante toda la ruta: un sistema backend de gestión y consulta de <strong>trámites ciudadanos</strong>. Empieza como una CLI en Java y crece mes a mes hasta convertirse en una API REST segura con PostgreSQL, Docker, CI/CD e integración de IA. Cada módulo añade una capa real al mismo proyecto, así que al final tendrás una sola aplicación completa para tu portafolio.</p>
+        </div>
+      </div>
+      <div id="roadmap" class="roadmap"></div>
+    </section>
+
+    <section id="avances" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Avances</p>
+        <h2>Tu progreso del temario</h2>
+      </div>
+      <div class="progress-panel">
+        <div class="progress-ring" aria-label="Progreso general">
+          <span id="progressPercent">0%</span>
+        </div>
+        <div class="progress-details">
+          <h3>Resumen de avance</h3>
+          <p id="progressText">Marca temas completados para calcular tu progreso.</p>
+          <div class="progress-bar"><span id="progressBar"></span></div>
+          <div id="moduleProgress" class="module-progress"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="consideraciones" class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Siempre presente</p>
+        <h2>Consideraciones profesionales</h2>
+      </div>
+      <div class="cards-grid considerations">
+        <article class="info-card featured"><i class="fa-solid fa-brain"></i><h3>Criterio arquitectónico</h3><p>El valor de un ingeniero backend no radica en la memorización de código boilerplate, sino en su criterio arquitectónico para estructurar modularmente sistemas escalables y supervisar de forma experta la correctitud y seguridad de soluciones creadas con asistentes de IA.</p></article>
+        <article class="info-card"><i class="fa-solid fa-code-branch"></i><h3>Portafolio real</h3><p>Documenta decisiones, diagramas, endpoints, pruebas, Docker Compose y análisis de complejidad. Tu GitHub debe contar una historia técnica.</p></article>
+        <article class="info-card"><i class="fa-solid fa-comments"></i><h3>Inglés técnico</h3><p>La comunicación bilingüe multiplica oportunidades remotas y nearshore. Practica explicar arquitectura, trade-offs y debugging en inglés.</p></article>
+        <article class="info-card"><i class="fa-solid fa-gauge-high"></i><h3>Producción sobre teoría aislada</h3><p>Aprende cada tema con entregables. La base algorítmica debe verse aplicada a búsquedas, colas, cachés, índices y optimización real.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Ruta Backend Java 2026 - Diseñada para estudio intensivo, práctica constante y preparación laboral.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
