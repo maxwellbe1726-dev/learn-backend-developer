@@ -56,6 +56,27 @@ function escapeHtml(value) {
   return value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
 }
 
+function highlightJava(code) {
+  const strings = [];
+  let highlighted = escapeHtml(code).replace(/("(?:\\.|[^"\\])*")/g, (match) => {
+    const token = `§STR${String.fromCharCode(65 + strings.length)}§`;
+    strings.push([token, `<span class="code-string">${match}</span>`]);
+    return token;
+  });
+
+  highlighted = highlighted
+    .replace(/\b(\d+(?:\.\d+)?(?:L)?)\b/g, '<span class="code-number">$1</span>')
+    .replace(/\b(public|private|protected|class|interface|record|enum|sealed|permits|extends|implements|static|final|void|int|double|boolean|var|return|if|else|for|try|catch|throw|throws|new|import|package|module|requires|exports)\b/g, '<span class="code-keyword">$1</span>')
+    .replace(/\b(String|System|Scanner|List|Set|Map|ArrayList|HashSet|HashMap|BigDecimal|Path|Files|Optional|Function|Predicate|Thread|Executors|StructuredTaskScope|RuntimeException|IllegalArgumentException|IOException|NumberFormatException|Logger|LoggerFactory)\b/g, '<span class="code-type">$1</span>')
+    .replace(/\b(out|println|print|of|stream|filter|map|toList|forEach|submit|start|readString|lines|parseInt|valueOf|now|append|contains|orElseThrow|getLogger|info|assertEquals|when|thenReturn|verify)\b(?=\()/g, '<span class="code-method">$1</span>')
+    .replace(/(@[A-Za-z0-9_]+)/g, '<span class="code-annotation">$1</span>');
+
+  strings.forEach(([token, value]) => {
+    highlighted = highlighted.replace(token, value);
+  });
+  return highlighted;
+}
+
 function renderJavaCards() {
   let counter = 0;
   const html = javaLevels.map(([id, level, topics]) => {
@@ -66,7 +87,7 @@ function renderJavaCards() {
         <div class="java-card-top"><span class="java-number">${counter}</span><span class="java-level">${level}</span></div>
         <h3>${title}</h3>
         <p>${descriptionFor(title, level)}</p>
-        <pre class="code-block"><code>${escapeHtml(code)}</code></pre>
+        <pre class="code-block"><code>${highlightJava(code)}</code></pre>
       </article>`;
     }).join('');
     return `<section id="${id}" class="java-level-section"><div class="java-level-heading"><span>${topics.length} temas</span><h2>${level}</h2></div><div class="java-card-grid">${cards}</div></section>`;

@@ -328,10 +328,10 @@ p { line-height: 1.7; }
   margin: auto 0 0;
   padding: 16px;
   border-radius: 18px;
-  background: #07101e;
-  color: #dbeafe;
-  border: 1px solid rgba(34, 211, 238, .22);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .04);
+  background: #1e1f22;
+  color: #bcbec4;
+  border: 1px solid rgba(188, 190, 196, .18);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .04), 0 14px 34px rgba(7, 16, 30, .18);
 }
 .code-block code {
   font-family: "JetBrains Mono", "Fira Code", Consolas, monospace;
@@ -339,6 +339,12 @@ p { line-height: 1.7; }
   line-height: 1.65;
   white-space: pre;
 }
+.code-keyword { color: #cf8e6d; font-weight: 800; }
+.code-type { color: #56a8f5; }
+.code-method { color: #dcdcaa; }
+.code-string { color: #6aab73; }
+.code-number { color: #2aacb8; }
+.code-annotation { color: #b3ae60; }
 .site-footer { padding: 28px; text-align: center; color: #c7d6ef; background: var(--bg); }
 
 @media (max-width: 980px) {
