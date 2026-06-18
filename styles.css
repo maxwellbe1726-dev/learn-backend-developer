@@ -278,13 +278,74 @@ p { line-height: 1.7; }
 .progress-bar span { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--green), var(--primary)); transition: width .25s ease; }
 .module-progress { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 18px; }
 .module-pill { padding: 12px; border-radius: 14px; background: #f4f7fb; font-weight: 800; color: #334155; }
+.java-hero { background: radial-gradient(circle at top right, rgba(250, 204, 21, .18), transparent 34%); }
+.java-important { background: #f8fbff; }
+.java-section { background: linear-gradient(180deg, #f8fbff, #eaf2ff); }
+.java-cards { display: grid; gap: 36px; }
+.java-level-section { scroll-margin-top: 110px; }
+.java-level-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+.java-level-heading span {
+  padding: 8px 13px;
+  border-radius: 999px;
+  background: rgba(59, 130, 246, .12);
+  color: var(--primary-2);
+  font-weight: 900;
+  white-space: nowrap;
+}
+.java-card-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.java-topic-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 390px;
+  padding: 22px;
+  border-radius: var(--radius);
+  background: var(--card);
+  border: 1px solid #e7edf8;
+  box-shadow: var(--shadow);
+}
+.java-card-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 14px; }
+.java-number {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  color: #00131c;
+  font-weight: 1000;
+}
+.java-level { color: var(--muted); font-size: .78rem; font-weight: 900; text-align: right; }
+.java-topic-card p { color: var(--muted); margin-bottom: 18px; }
+.code-block {
+  overflow: auto;
+  flex: 1;
+  margin: auto 0 0;
+  padding: 16px;
+  border-radius: 18px;
+  background: #07101e;
+  color: #dbeafe;
+  border: 1px solid rgba(34, 211, 238, .22);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .04);
+}
+.code-block code {
+  font-family: "JetBrains Mono", "Fira Code", Consolas, monospace;
+  font-size: .86rem;
+  line-height: 1.65;
+  white-space: pre;
+}
 .site-footer { padding: 28px; text-align: center; color: #c7d6ef; background: var(--bg); }
 
 @media (max-width: 980px) {
   .site-header { align-items: flex-start; flex-direction: column; }
   .main-nav { flex-wrap: wrap; }
   .hero { grid-template-columns: 1fr; min-height: auto; }
-  .cards-grid, .topic-list, .module-progress { grid-template-columns: 1fr 1fr; }
+  .cards-grid, .topic-list, .module-progress, .java-card-grid { grid-template-columns: 1fr 1fr; }
   .roadmap::before, .roadmap::after { left: 24px; transform: none; }
   .road-card, .road-card:nth-child(even) { width: calc(100% - 84px); justify-self: end; }
   .progress-panel { grid-template-columns: 1fr; }
@@ -292,7 +353,8 @@ p { line-height: 1.7; }
 
 @media (max-width: 640px) {
   .section { padding: 58px 16px; }
-  .cards-grid, .topic-list, .module-progress { grid-template-columns: 1fr; }
+  .cards-grid, .topic-list, .module-progress, .java-card-grid { grid-template-columns: 1fr; }
+  .java-level-heading { align-items: flex-start; flex-direction: column; }
   .topic-item:nth-child(odd) { border-right: 0; }
   h1 { font-size: 2.55rem; }
   .hero-card strong { font-size: 2rem; }
