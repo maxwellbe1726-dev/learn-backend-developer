@@ -378,6 +378,13 @@ p { line-height: 1.7; }
   color: var(--ink);
   line-height: 1.5;
 }
+
+/* Colores para ejemplos de cloud.html cada 20 items */
+.example-color-1 code { color: #a855f7; }
+.example-color-2 code { color: #22c55e; }
+.example-color-3 code { color: #f59e0b; }
+.example-color-4 code { color: #3b82f6; }
+.example-color-5 code { color: #ec4899; }
 .code-block {
   overflow: auto;
   flex: 1;

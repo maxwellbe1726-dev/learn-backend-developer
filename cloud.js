@@ -14,11 +14,12 @@ function renderCloudCards() {
     const cards = topics.map((title) => {
       counter += 1;
       const example = exampleForCloud(title);
+      const colorClass = `example-color-${Math.ceil(counter / 20)}`;
       return `<article class="java-topic-card">
         <div class="java-card-top"><span class="java-number">${counter}</span><span class="java-level">${level}</span></div>
         <h3>${title}</h3>
         <p>${descriptionForCloud(title, level)}</p>
-        <pre class="code-block"><code>${example}</code></pre>
+        <pre class="code-block ${colorClass}"><code>${example}</code></pre>
       </article>`;
     }).join('');
     return `<section id="${id}" class="java-level-section"><div class="java-level-heading"><span>${topics.length} temas</span><h2>${level}</h2></div><div class="java-card-grid">${cards}</div></section>`;
