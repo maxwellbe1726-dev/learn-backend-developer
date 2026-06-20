@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fundamentos de Nube - 100 temas</title>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="index.html#inicio" class="brand">
+      <span class="brand-icon"><i class="fa-solid fa-cloud"></i></span>
+      <span>Fundamentos de Nube</span>
+    </a>
+    <nav class="main-nav" aria-label="Navegación nube">
+      <a href="index.html">Inicio</a>
+      <a href="#conceptos">Conceptos</a>
+      <a href="#redes">Redes</a>
+      <a href="#computo">Cómputo</a>
+      <a href="#seguridad">Seguridad</a>
+      <a href="#devops">DevOps</a>
+      <a href="#avanzado">Avanzado</a>
+    </nav>
+    <a class="toggle-checks" href="index.html#nube"><i class="fa-solid fa-arrow-left"></i> Volver</a>
+  </header>
+  <main>
+    <section class="hero section">
+      <div class="hero-content">
+        <p class="eyebrow"><i class="fa-solid fa-cloud"></i> Infraestructura y Nube</p>
+        <h1>100 temas de nube desde cero hasta avanzado</h1>
+        <p class="hero-copy">Aprende qué es la nube, cómo se compara con un servidor local, los conceptos clave de AWS/Azure/GCP y buenas prácticas para backend moderno.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#cloudTopics">Ver cards</a>
+          <a class="btn secondary" href="index.html#plan">Ver plan backend</a>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <span class="card-badge">Diferencia clave</span>
+        <strong>La nube no es un servidor</strong>
+        <p>Es un conjunto de servicios gestionados por internet. Puedes alquilar servidores, pero también bases de datos, balanceadores, inteligencia artificial y mucho más sin mantener hardware.</p>
+        <div class="mini-stats">
+          <span><b>7</b> niveles</span>
+          <span><b>100</b> cards</span>
+          <span><b>3</b> proveedores</span>
+        </div>
+      </aside>
+    </section>
+    <section id="cloudTopics" class="section java-section">
+      <div class="section-heading">
+        <p class="eyebrow">Temario detallado</p>
+        <h2>Cards de estudio de nube</h2>
+        <p>Cada tema tiene una explicación corta y un ejemplo real para practicar.</p>
+      </div>
+      <div id="cloudCards" class="java-cards"></div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <p>Fundamentos de Nube - 100 temas para backend moderno en 2026.</p>
+  </footer>
+  <script src="cloud.js"></script>
+</body>
+</html>

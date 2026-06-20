@@ -125,6 +125,21 @@ p { line-height: 1.7; }
 .info-card.featured { background: linear-gradient(135deg, #0f1f34, #18375f); color: var(--text); }
 .info-card.featured p { color: #c7d6ef; }
 
+.agentic-card {
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 32px;
+  border-radius: var(--radius);
+  background: linear-gradient(135deg, #0f1f34, #18375f);
+  color: var(--text);
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+.agentic-card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 20px; }
+.agentic-card h3 { margin: 0 0 16px 0; }
+.agentic-card p { color: #c7d6ef; font-size: 1.1rem; }
+
 .curriculum { display: grid; gap: 18px; }
 .module-card {
   overflow: hidden;
@@ -322,6 +337,47 @@ p { line-height: 1.7; }
 }
 .java-level { color: var(--muted); font-size: .78rem; font-weight: 900; text-align: right; }
 .java-topic-card p { color: var(--muted); margin-bottom: 18px; }
+.java-topic-card h4 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--ink);
+  margin: 0 0 12px 0;
+}
+.level-title {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--ink);
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 3px solid var(--primary);
+}
+.topic-desc {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+.example-block {
+  margin-top: auto;
+  padding: 16px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f0f7ff, #e6f0ff);
+  border-left: 4px solid var(--primary);
+}
+.example-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 900;
+  color: var(--primary-2);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.example-block p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--ink);
+  line-height: 1.5;
+}
 .code-block {
   overflow: auto;
   flex: 1;
