@@ -56,21 +56,47 @@ function descriptionForAlgorithm(title, category) {
   return `Algoritmo de ${category.toLowerCase()} que entrena razonamiento, análisis de casos y eficiencia para resolver problemas de programación.`;
 }
 
-function visualType(title, index) {
-  if (title.includes('Sort') || title.includes('orden') || title.includes('Heap')) return 'bars';
-  if (title.includes('Dijkstra') || title.includes('BFS') || title.includes('DFS') || title.includes('grafo') || title.includes('Kruskal') || title.includes('Prim') || title.includes('A Star')) return 'graph';
-  if (title.includes('Window') || title.includes('Pointers') || title.includes('Search') || title.includes('Búsqueda')) return 'segments';
-  if (title.includes('Tree') || title.includes('Trie') || title.includes('árbol')) return 'tree';
-  if (title.includes('Hash') || title.includes('Cache') || title.includes('Bloom')) return 'bubbles';
-  return ['bars', 'graph', 'segments', 'tree', 'bubbles'][index % 5];
+function visualType(title, id) {
+  const t = title.toLowerCase();
+  if (id === 'ordenamiento' || t.includes('sort') || t.includes('timsort')) return 'sort';
+  if (t.includes('binaria') || t.includes('lower bound') || t.includes('upper bound') || t.includes('ternaria') || t.includes('jump') || t.includes('exponential') || t.includes('interpolación') || t.includes('binary search') || t.includes('matriz ordenada')) return 'binary';
+  if (t.includes('two pointers') || t.includes('punteros') || t.includes('intercambio') || t.includes('palíndromo') || t.includes('rotación') || t.includes('hamming') || t.includes('mayor área')) return 'twopointer';
+  if (t.includes('window') || t.includes('ventana') || t.includes('subcadena')) return 'window';
+  if (id === 'strings') return 'string';
+  if (t.includes('pila') || t.includes('stack')) return 'stack';
+  if (t.includes('cola') || t.includes('deque') || t.includes('queue') || t.includes('reservoir') || t.includes('rate limiting') || t.includes('mapreduce')) return 'queue';
+  if (t.includes('hash') || t.includes('frecuencia') || t.includes('set ') || t.includes('cache') || t.includes('bloom') || t.includes('consistent')) return 'hash';
+  if (id === 'arboles' || t.includes('trie') || t.includes('heap') || t.includes('tree') || t.includes('árbol')) return 'tree';
+  if (id === 'rutas') return 'path';
+  if (id === 'grafos' || t.includes('grafo') || t.includes('dfs') || t.includes('bfs') || t.includes('pagerank') || t.includes('scc')) return 'graph';
+  if (id === 'dinamica' || t.includes('kadane') || t.includes('prefix') || t.includes('difference') || t.includes('knapsack') || t.includes('subsequence')) return 'dp';
+  if (id === 'optimizacion' || t.includes('backtracking') || t.includes('queens') || t.includes('sudoku') || t.includes('permutaciones') || t.includes('combinaciones') || t.includes('minimax') || t.includes('alpha') || t.includes('branch')) return 'recursion';
+  if (id === 'fundamentos') return (t.includes('frecuencia')) ? 'hash' : (t.includes('máximo') || t.includes('mínimo')) ? 'sort' : 'scan';
+  return 'scan';
+}
+
+function cells(n) {
+  return Array.from({ length: n }, () => '<span></span>').join('');
 }
 
 function visualHtml(type) {
-  if (type === 'bars') return '<div class="algo-bars"><span></span><span></span><span></span><span></span><span></span></div>';
-  if (type === 'graph') return '<div class="algo-graph"><i></i><i></i><i></i><i></i><b></b><b></b><b></b></div>';
-  if (type === 'segments') return '<div class="algo-segments"><span></span><span></span><span></span><span></span></div>';
-  if (type === 'tree') return '<div class="algo-tree"><i></i><i></i><i></i><i></i><b></b><b></b><b></b></div>';
-  return '<div class="algo-bubbles"><span></span><span></span><span></span><span></span><span></span></div>';
+  switch (type) {
+    case 'sort': return `<div class="v-sort">${cells(6)}</div><span class="v-tag">ordena de menor a mayor</span>`;
+    case 'scan': return `<div class="v-scan">${cells(6)}<i class="v-cursor"></i></div><span class="v-tag">recorre uno por uno</span>`;
+    case 'binary': return `<div class="v-binary">${cells(7)}<i class="v-mid"></i></div><span class="v-tag">parte a la mitad</span>`;
+    case 'twopointer': return `<div class="v-tp">${cells(6)}<i class="v-l"></i><i class="v-r"></i></div><span class="v-tag">dos punteros que se acercan</span>`;
+    case 'window': return `<div class="v-window">${cells(7)}<i class="v-frame"></i></div><span class="v-tag">ventana que se desliza</span>`;
+    case 'string': return `<div class="v-string"><b>O</b><b>L</b><b>A</b><b>H</b></div><span class="v-tag">transforma caracteres</span>`;
+    case 'stack': return `<div class="v-stack">${cells(4)}<i class="v-arrow"></i></div><span class="v-tag">LIFO: entra y sale por arriba</span>`;
+    case 'queue': return `<div class="v-queue">${cells(4)}</div><span class="v-tag">FIFO: fluye de inicio a fin</span>`;
+    case 'hash': return `<div class="v-hash"><u></u><u></u><u></u><i></i><i></i></div><span class="v-tag">claves caen en cubetas</span>`;
+    case 'tree': return `<div class="v-tree"><i></i><i></i><i></i><b></b><b></b></div><span class="v-tag">jerarquía padre e hijos</span>`;
+    case 'graph': return `<div class="v-graph"><i></i><i></i><i></i><i></i><b></b><b></b><b></b></div><span class="v-tag">nodos conectados</span>`;
+    case 'path': return `<div class="v-path"><i></i><i></i><i></i><i></i><b></b></div><span class="v-tag">camino más corto</span>`;
+    case 'dp': return `<div class="v-dp">${Array.from({ length: 16 }, (_, i) => `<span style="animation-delay:${(i % 4 + Math.floor(i / 4)) * 0.12}s"></span>`).join('')}</div><span class="v-tag">llena una tabla por partes</span>`;
+    case 'recursion': return `<div class="v-rec"><i></i><i></i><i></i></div><span class="v-tag">se repite hacia dentro</span>`;
+    default: return `<div class="v-scan">${cells(6)}<i class="v-cursor"></i></div><span class="v-tag">recorre uno por uno</span>`;
+  }
 }
 
 function renderAlgorithms() {
@@ -79,7 +105,7 @@ function renderAlgorithms() {
   container.innerHTML = algorithmLevels.map(([id, category, level, topics]) => {
     const cards = topics.map((title) => {
       counter += 1;
-      const type = visualType(title, counter);
+      const type = visualType(title, id);
       return `<article class="algorithm-card">
         <div class="java-card-top"><span class="java-number">${counter}</span><span class="java-level">${level}</span></div>
         <div class="algorithm-visual ${type}">${visualHtml(type)}</div>
