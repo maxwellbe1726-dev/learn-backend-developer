@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Algoritmia para Programación - 120 algoritmos</title>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="index.html#inicio" class="brand">
+      <span class="brand-icon"><i class="fa-solid fa-diagram-project"></i></span>
+      <span>Algoritmia</span>
+    </a>
+    <nav class="main-nav" aria-label="Navegación Algoritmia">
+      <a href="index.html">Inicio</a>
+      <a href="#fundamentos">Fundamentos</a>
+      <a href="#busqueda">Búsqueda</a>
+      <a href="#ordenamiento">Ordenamiento</a>
+      <a href="#grafos">Grafos</a>
+      <a href="#avanzados">Avanzados</a>
+    </nav>
+    <a class="toggle-checks" href="index.html#temario"><i class="fa-solid fa-arrow-left"></i> Volver</a>
+  </header>
+
+  <main>
+    <section class="hero section algorithms-hero">
+      <div class="hero-content">
+        <p class="eyebrow"><i class="fa-solid fa-brain"></i> Lógica de programación y algoritmia</p>
+        <h1>120 algoritmos para aprender a pensar como programador backend</h1>
+        <p class="hero-copy">Una ruta visual desde problemas básicos hasta algoritmos avanzados usados en búsquedas, rutas, optimización, bases de datos, cachés, seguridad, sistemas distribuidos e inteligencia artificial.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#algorithmCards">Ver algoritmos</a>
+          <a class="btn secondary" href="java.html">Practicar con Java 21</a>
+        </div>
+      </div>
+      <aside class="hero-card algorithm-hero-card">
+        <span class="card-badge">Ruta visual</span>
+        <strong>120 cards</strong>
+        <p>Cada card tiene título, categoría, dificultad, descripción breve y una mini animación conceptual.</p>
+        <div class="mini-stats">
+          <span><b>3</b> cards/fila</span>
+          <span><b>12</b> categorías</span>
+          <span><b>Java</b> backend</span>
+        </div>
+      </aside>
+    </section>
+
+    <section class="section java-important">
+      <div class="section-heading">
+        <p class="eyebrow">Cómo estudiar esta página</p>
+        <h2>Primero lógica, luego estructuras, después algoritmos reales</h2>
+      </div>
+      <div class="cards-grid">
+        <article class="info-card featured"><i class="fa-solid fa-seedling"></i><h3>Básico</h3><p>Aprende a recorrer datos, comparar, contar, acumular y transformar información.</p></article>
+        <article class="info-card"><i class="fa-solid fa-magnifying-glass"></i><h3>Búsqueda</h3><p>Entiende cómo encontrar datos eficientemente en arrays, listas, árboles, hashes y grafos.</p></article>
+        <article class="info-card"><i class="fa-solid fa-arrow-down-wide-short"></i><h3>Ordenamiento</h3><p>Compara estrategias simples y eficientes para organizar datos y mejorar consultas.</p></article>
+        <article class="info-card"><i class="fa-solid fa-route"></i><h3>Grafos</h3><p>Modela rutas, redes, dependencias y relaciones complejas con BFS, DFS, Dijkstra y más.</p></article>
+      </div>
+    </section>
+
+    <section id="algorithmCards" class="section java-section">
+      <div class="section-heading">
+        <p class="eyebrow">Lista completa</p>
+        <h2>Algoritmos clasificados por tipo y nivel</h2>
+        <p>El objetivo no es memorizar nombres: es aprender cuándo usar cada idea para resolver problemas de programación.</p>
+      </div>
+      <div id="algorithmsCards" class="algorithm-cards"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Algoritmia para Backend Java 2026 - Base mental para resolver problemas reales.</p>
+  </footer>
+
+  <script src="algoritmos.js"></script>
+</body>
+</html>
